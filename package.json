@@ -1,0 +1,39 @@
+{
+  "name": "lets-talk-about--gql-codegen",
+  "version": "1.0.0",
+  "description": "example codegen repo",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-server": "cd server && ../node_modules/.bin/tsc --project ./tsconfig.json",
+    "build-client": "cd client && ../node_modules/.bin/tsc --project ./tsconfig.json",
+    "start-server": "cd server/dist && node ./index.js",
+    "start-client": "cd client/dist && node ./index.js",
+    "prestart-client": "npm run build-client",
+    "gql:generate": "./node_modules/.bin/graphql-codegen"
+  },
+  "esm": {
+    "cjs": false,
+    "mode": "auto"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-codegen/cli": "^1.12.2",
+    "@graphql-codegen/typescript": "^1.12.2",
+    "@graphql-codegen/typescript-operations": "^1.12.2",
+    "@shyftplan/js-config": "^7.0.0",
+    "@std/esm": "^0.26.0",
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link": "^1.2.13",
+    "apollo-link-http": "^1.5.16",
+    "apollo-server-env": "^2.4.3",
+    "apollo-server-express": "^2.10.1",
+    "eslint": "^5.0.0",
+    "typescript": "^3.8.2",
+    "eslint-import-resolver-node": "^0.3.3",
+    "express": "^4.17.1"
+  }
+}

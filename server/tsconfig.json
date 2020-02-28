@@ -1,0 +1,10 @@
+{
+  "extends": "../node_modules/@shyftplan/js-config/compilers/tsconfig.nodejs",
+  "compilerOptions": {
+    "lib": ["es7"],
+    "target": "ESNext",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "esModuleInterop": true
+  }
+}
