@@ -1,47 +1,70 @@
 export type Maybe<T> = T | null;
 /** All built-in and custom scalars, mapped to their actual values */
-export interface Scalars {
-  ID: string;
-  String: string;
-  Boolean: boolean;
-  Int: number;
-  Float: number;
-  Upload: any;
-}
+export type Scalars = {
+  ID: string,
+  String: string,
+  Boolean: boolean,
+  Int: number,
+  Float: number,
+  Upload: any,
+};
 
 export enum GQLCacheControlScope {
   Public = 'PUBLIC',
   Private = 'PRIVATE'
 }
 
-export interface GQLQuery {
-  __typename?: 'Query';
-  simpleOperation?: Maybe<GQLSimpleOperationResult>;
-}
+export type GQLMutation = {
+   __typename?: 'Mutation',
+  simple: GQLSimpleType,
+};
 
 
-export interface GQLQuerySimpleOperationArgs {
-  id: Scalars['Int'];
-  value?: Maybe<Scalars['String']>;
-}
+export type GQLMutationSimpleArgs = {
+  value: Scalars['String']
+};
 
-export interface GQLSimpleOperationResult {
-  __typename?: 'SimpleOperationResult';
-  value: Scalars['String'];
-  id: Scalars['Int'];
-}
+export type GQLQuery = {
+   __typename?: 'Query',
+  simple: GQLSimpleType,
+};
 
 
-export interface GQLSimpleQueryQueryVariables {
-  id: Scalars['Int'];
-  value?: Maybe<Scalars['String']>;
-}
+export type GQLQuerySimpleArgs = {
+  id: Scalars['Int'],
+  value?: Maybe<Scalars['String']>
+};
+
+export type GQLSimpleType = {
+   __typename?: 'SimpleType',
+  value: Scalars['String'],
+  id: Scalars['Int'],
+};
 
 
-export type GQLSimpleQueryQuery = (
+export type GQLInlineMutationVariables = {
+  value: Scalars['String']
+};
+
+
+export type GQLInlineMutation = (
+  { __typename?: 'Mutation' }
+  & { simple: (
+    { __typename?: 'SimpleType' }
+    & Pick<GQLSimpleType, 'id' | 'value'>
+  ) }
+);
+
+export type GQLExternalQueryVariables = {
+  id: Scalars['Int'],
+  value?: Maybe<Scalars['String']>
+};
+
+
+export type GQLExternalQuery = (
   { __typename?: 'Query' }
-  & { simpleOperation: Maybe<(
-    { __typename?: 'SimpleOperationResult' }
-    & Pick<GQLSimpleOperationResult, 'id' | 'value'>
-  )>; }
+  & { simple: (
+    { __typename?: 'SimpleType' }
+    & Pick<GQLSimpleType, 'id' | 'value'>
+  ) }
 );
