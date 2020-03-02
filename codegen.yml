@@ -7,6 +7,6 @@ generates:
     plugins:
       - typescript
       - typescript-operations
-# hooks:
-#   afterAllFileWrite:
-#     - ./node_modules/.bin/eslint --ext .d.ts --fix --config .eslintrc.js
+hooks:
+  afterAllFileWrite:
+    - ./node_modules/.bin/eslint --ext .d.ts --fix --config .eslintrc.js
