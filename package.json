@@ -31,7 +31,7 @@
     "apollo-link-http": "^1.5.16",
     "apollo-server-env": "^2.4.3",
     "apollo-server-express": "^2.10.1",
-    "eslint": "^5.0.0",
+    "eslint": "^9.26.0",
     "typescript": "^3.8.2",
     "eslint-import-resolver-node": "^0.3.3",
     "express": "^4.17.1"
