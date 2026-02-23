@@ -20,7 +20,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@graphql-codegen/cli": "^1.12.2",
+    "@graphql-codegen/cli": "^1.21.8",
     "@graphql-codegen/typescript": "^1.12.2",
     "@graphql-codegen/typescript-operations": "^1.12.2",
     "@shyftplan/js-config": "^7.0.0",
